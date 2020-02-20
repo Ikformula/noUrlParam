@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!--External Styles -->
+    <link rel="stylesheet" href="bootswatch_united/bootstrap.css">
+
+    <!-- Internal Styles -->
+	<style>
+        @media (max-width: 62em) {
+            .navbar-nav {
+                padding-top: .425rem;
+                padding-left: 0.75rem;
+            }
+            .navbar-nav .nav-item {
+                float: none;
+            }
+            .navbar-brand {
+                float: right;
+            }
+            .navbar-brand,
+            .navbar-nav .nav-item {
+                display: block;
+            }
+            .navbar-nav .nav-item + .nav-item {
+                margin-left: 0;
+            }
+            .dropdown-menu {
+                position: relative;
+                float: none;
+            }
+        }
+    </style>
+    <!-- External Scripts -->
+    <script src="bootswatch_united/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"></script>
+    <script src="bootswatch_united/bootstrap.js"></script>
+    
+    <!-- Internal Scripts -->
+	<script type="text/javascript" src="">
+	</script>
+
+    <title>URL Parameters remover</title>
+
+	
+</head>
+
+<body>
+   <div style="margin-top: 50px"></div>
+	<div class="container-fluid">
+        <div class="row">
+	<div class="col-xs-12 col-md-12">
+		<form action="" method="get" id="med-form">
+		    <input type="url" name="med_url" id="med_url" placeholder="Paste the url here" class="form-control" required="required" title="">
+		</form>
+	</div>
+</div>
+<div style="margin-top: 30px"></div>
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<button id="ut-url" class="btn btn-success btn-block">Untagged Link</button>
+	</div>
+</div>
+
+	</div>
+
+
+<script>
+    $(document).ready(function(){
+         $('#ut-url').click(function(){
+        var ut_url = $('#med_url').val();
+        var new_url = ut_url.split('?');
+//        alert(new_url[0]);
+//             http://gag.cjh/ght?gh=34
+        location.href = new_url[0];
+    });
+    });
+   
+</script>
+</body>
+
+</html>
